@@ -50,7 +50,7 @@ function App() {
         {/* <Logo /> */}
       </header>
       <InvestForm onCalculate={calculateHandler} />
-      {!userInput && <p>No Investment calculated.</p>}
+      {!userInput && <p style={{textAlign: 'center'}}>No Investment calculated.</p>}
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
       {userInput && <InvestTable data={yearlyData} initialInvestment={userInput['current-savings']} />}
