@@ -15,13 +15,6 @@ const InvestForm = (props) => {
     "expected-return": 7,
     duration: 10,
   });
-  // const [enteredCurrentSavings, setEnteredCurrentSavings] = useState("");
-  // const [enteredYearlyContribution, setEnteredYearlyContributions] =
-  //   useState("");
-  // const [enteredExpectedReturn, setEnteredExpectedReturn] = useState("");
-  // const [enteredDuration, setEnteredDuration] = useState("");
-
-
 
   const submitHandler = (event) => {
     event.preventDefault();

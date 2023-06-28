@@ -8,11 +8,9 @@ function App() {
 
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
-    // Should be triggered when form is submitted
-    // You might not directly want to bind it to the submit event on the form though...
   };
 
-  const yearlyData = []; // per-year results
+  const yearlyData = [];
 
   if (userInput) {
     let currentSavings = userInput["current-savings"]; // feel free to change the shape of this input object!
@@ -20,12 +18,10 @@ function App() {
     const expectedReturn = userInput["expected-return"] / 100;
     const duration = userInput["duration"];
 
-    // The below code calculates yearly results (total savings, interest etc)
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
-        // feel free to change the shape of the data pushed to the array!
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
@@ -51,8 +47,6 @@ function App() {
       </header>
       <InvestForm onCalculate={calculateHandler} />
       {!userInput && <p style={{textAlign: 'center'}}>No Investment calculated.</p>}
-      {/* Todo: Show below table conditionally (only once result data is available) */}
-      {/* Show fallback text if no data is available */}
       {userInput && <InvestTable data={yearlyData} initialInvestment={userInput['current-savings']} />}
     </div>
   );
